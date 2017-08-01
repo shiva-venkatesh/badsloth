@@ -1,0 +1,19 @@
+{
+  "name": "badsloth",
+  "version": "1.0.0",
+  "description": "slack bot for music lovers",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "botkit": "^0.5.6",
+    "express": "^4.15.3",
+    "google": "^2.1.0",
+    "mongoose": "^4.11.5",
+    "slackbots": "^1.0.2"
+  }
+}
