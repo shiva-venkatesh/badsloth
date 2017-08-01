@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var router = express.Router();
+var Item = require('../models/item.js');
 
 router.use(function(req, res, next) {
   console.log('%s %s %s', req.method, req.url, req.path);
@@ -10,10 +11,13 @@ router.use(function(req, res, next) {
 
 const items_get = (req, res) => {
   console.log('hello : ')
-  var object = {
-    name: 'shiva'
-  }
-  res.json(object);
+  Item.find().exec(function(err, items) {
+    if(err) {
+      res.json(err);
+    }
+    res.json(items);
+  })
+
 }
 
 // Setting routes

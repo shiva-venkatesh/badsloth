@@ -23,6 +23,14 @@ const slack_oauth  = process.env.SLACK_OAUTH;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", 'http://localhost:3232');
+  res.header("Access-Control-Request-Headers", "*");
+  res.header('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
+  res.header("Access-Control-Allow-Headers", "Origin, Content-Type, Accept, Authorization");
+  res.header("Access-Control-Allow-Credentials", "true");
+  next();
+});
 
 // create a bot
 var bot = new SlackBot({
