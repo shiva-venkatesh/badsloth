@@ -14,9 +14,8 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
 var db = mongoose.connection;
-// mongoose.connect('mongodb://<shiva-venkatesh>:<shiva123>@ds119380.mlab.com:19380/chelsea-fans');
+mongoose.connect('mongodb://sean:shiva123@ds129733.mlab.com:29733/badsloth');
 
-// use the tokens you got from the previous step
 process.env.SLACK_TOKEN = 'xoxp-219675461296-220256236163-220394512132-1c853038dd9bf57317c939af52a8c999'
 process.env.SLACK_OAUTH = 'xoxb-221225998662-isRFtRKE8XqG9RLvOl6oY1zr'
 const slack_token  = process.env.SLACK_TOKEN;
@@ -27,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // create a bot
 var bot = new SlackBot({
-    token: 'xoxb-221225998662-isRFtRKE8XqG9RLvOl6oY1zr' // Add a bot https://my.slack.com/services/new/bot and put the token
+    token: 'xoxb-221300300758-1Dq3zxsy5d7iKrQ2vOUWBo4q' // Add a bot https://my.slack.com/services/new/bot and put the token
 });
 
 const slackBot = () => {
@@ -36,14 +35,14 @@ const slackBot = () => {
     var params = {
       icon_emoji: ':cat:'
     };
-    bot.postMessageToChannel('general', 'meow!', params);
-    bot.postMessageToUser('user_name', 'meow!', params);
-    bot.postMessageToUser('user_name', 'meow!', { 'slackbot': true, icon_emoji: ':cat:' });
-
-    bot.postMessageToGroup('private_group', 'meow!', params);
-    bot.on('message', (e) => {
-      console.log(e)
-    })
+    // bot.postMessageToChannel('general', 'meow!', params);
+    // bot.postMessageToUser('user_name', 'meow!', params);
+    // bot.postMessageToUser('user_name', 'meow!', { 'slackbot': true, icon_emoji: ':cat:' });
+    //
+    // bot.postMessageToGroup('private_group', 'meow!', params);
+    // bot.on('message', (e) => {
+    //   console.log(e)
+    // })
     bot.on('message.im_created', (e) => {
       console.log(e)
     })

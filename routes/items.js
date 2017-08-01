@@ -19,7 +19,7 @@ const items_get = (req, res) => {
 // Setting routes
 // router.get('/new', ensureAuthenticated, track_create_get)
 // router.post('/', items_post)
-router.post('/', items_get)
+router.get('/', items_get)
 
 // router.get('/all', ensureAuthenticated, list_tracks)
 
